@@ -1,0 +1,40 @@
+# 数据源配置
+data_source:
+  provider: "yfinance"
+  cache_duration: 3600  # 缓存时间（秒）
+
+# 指数配置
+indices:
+  SP500: 
+    symbol: "^GSPC"
+    name: "标普500"
+    components_url: "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+  NASDAQ100:
+    symbol: "^NDX"
+    name: "纳斯达克100"
+  RUSSELL2000:
+    symbol: "^RUT"
+    name: "罗素2000"
+
+# 技术分析参数
+moving_averages:
+  - 21
+  - 63
+  - 127
+
+# UI配置
+ui:
+  theme: "light"
+  refresh_rate: 300  # 数据刷新间隔（秒）
+  default_index: "SP500"
+  default_ma: 21
+
+# 市场宽度分析配置
+market_breadth:
+  lookback_days: 1000
+  overbought_threshold: 80
+  oversold_threshold: 20
+  chart_colors:
+    line: "#1f77b4"
+    overbought: "rgba(255, 0, 0, 0.1)"
+    oversold: "rgba(0, 255, 0, 0.1)"
